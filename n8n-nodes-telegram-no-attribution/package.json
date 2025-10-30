@@ -1,0 +1,46 @@
+{
+  "name": "n8n-nodes-telegram-no-attribution",
+  "version": "0.1.0",
+  "description": "Telegram node without the n8n attribution footer",
+  "keywords": [
+    "n8n-community-node-package",
+    "telegram",
+    "no-attribution"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://example.com/your-repo.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node ./scripts/copy-assets.cjs",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run build"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/TelegramNoAttribution/TelegramNoAttribution.node.js"
+    ]
+  },
+  "dependencies": {
+    "n8n-core": "^1.115.0",
+    "n8n-workflow": "^1.115.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.17",
+    "n8n-nodes-base": "^1.115.0",
+    "typescript": "^5.6.3"
+  },
+  "peerDependencies": {
+    "n8n-nodes-base": "^1.115.0"
+  },
+  "packageManager": "pnpm@10.18.3"
+}
